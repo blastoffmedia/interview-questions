@@ -1,0 +1,16 @@
+{
+  "name": "creator-platform-interview",
+  "version": "1.0.0",
+  "description": "Interview coding challenge with Next.js and Express",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../next && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd next && npm run dev",
+    "dev": "echo 'Please run backend and frontend in separate terminals:\\n\\nTerminal 1: npm run dev:backend\\nTerminal 2: npm run dev:frontend'"
+  },
+  "keywords": ["interview", "nextjs", "express", "typescript"],
+  "author": "",
+  "license": "ISC"
+}
+
