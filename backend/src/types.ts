@@ -2,15 +2,13 @@
  * TypeScript types for the backend
  */
 
-export interface Creator {
-  username: string;
-  name: string;
-  bio: string;
-  avatarUrl: string;
-  followerCount: number;
+export interface Content {
+  postId: number;
+  title: string;
+  creatorName: string;
+  description: string;
+  publishedDate: string;
   category: string;
-  joinedDate: string;
-  isVerified: boolean;
 }
 
 export interface User {

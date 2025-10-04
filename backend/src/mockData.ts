@@ -1,58 +1,53 @@
-import { Creator } from "./types";
+import { Content } from "./types";
 
 /**
- * Mock creator data for the application
+ * Mock content data for the application
  * In a real app, this would come from your database
  */
-export const mockCreators: Record<string, Creator> = {
-  sarah_designs: {
-    username: "sarah_designs",
-    name: "Sarah Chen",
-    bio: "Digital artist and UI/UX designer. Creating beautiful interfaces and illustrations.",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-    followerCount: 15420,
+export const mockContent: Record<string, Content> = {
+  "101": {
+    postId: 101,
+    title: "10 Tips for Better UI Design",
+    creatorName: "Sarah Chen",
+    description:
+      "Learn the fundamental principles of creating beautiful and functional user interfaces. This comprehensive guide covers color theory, typography, spacing, and layout best practices.",
     category: "Design",
-    joinedDate: "2024-01-15",
-    isVerified: true,
+    publishedDate: "2024-01-15",
   },
-  tech_mike: {
-    username: "tech_mike",
-    name: "Mike Rodriguez",
-    bio: "Full-stack developer sharing coding tutorials and tech reviews.",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mike",
-    followerCount: 8930,
+  "102": {
+    postId: 102,
+    title: "React Server Components Explained",
+    creatorName: "Mike Rodriguez",
+    description:
+      "A deep dive into React Server Components and how they work in Next.js 15. Understand the benefits, use cases, and implementation patterns.",
     category: "Technology",
-    joinedDate: "2024-03-22",
-    isVerified: true,
+    publishedDate: "2024-03-22",
   },
-  fitness_emma: {
-    username: "fitness_emma",
-    name: "Emma Thompson",
-    bio: "Certified personal trainer. Helping you achieve your fitness goals! 💪",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
-    followerCount: 23100,
+  "103": {
+    postId: 103,
+    title: "Full Body Workout Routine",
+    creatorName: "Emma Thompson",
+    description:
+      "30-minute full body workout you can do at home with no equipment. Perfect for busy schedules and all fitness levels.",
     category: "Fitness",
-    joinedDate: "2023-11-08",
-    isVerified: true,
+    publishedDate: "2023-11-08",
   },
-  chef_marco: {
-    username: "chef_marco",
-    name: "Marco Bianchi",
-    bio: "Italian chef and food enthusiast. Sharing family recipes and cooking tips.",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marco",
-    followerCount: 12650,
+  "104": {
+    postId: 104,
+    title: "Authentic Italian Pasta Recipe",
+    creatorName: "Marco Bianchi",
+    description:
+      "My grandmother's secret pasta recipe passed down for generations. Simple ingredients, incredible flavor. Learn the traditional Italian technique.",
     category: "Food",
-    joinedDate: "2024-02-10",
-    isVerified: false,
+    publishedDate: "2024-02-10",
   },
-  music_alex: {
-    username: "music_alex",
-    name: "Alex Kim",
-    bio: "Music producer and sound engineer. Electronic music and production tutorials.",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
-    followerCount: 19200,
+  "105": {
+    postId: 105,
+    title: "Music Production Basics",
+    creatorName: "Alex Kim",
+    description:
+      "Getting started with electronic music production - essential tools, software, and techniques for beginners. Create your first track today.",
     category: "Music",
-    joinedDate: "2023-12-03",
-    isVerified: true,
+    publishedDate: "2023-12-03",
   },
 };
