@@ -1,7 +1,3 @@
-/**
- * TypeScript types for the backend
- */
-
 export interface ContentItem {
   id: number;
   title: string;

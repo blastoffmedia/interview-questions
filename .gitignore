@@ -4,6 +4,8 @@ dist/
 .env
 *.log
 .DS_Store
+.idea/
+.vscode/
 
 # Solution files (for interviewers only - don't commit)
 SOLUTION.md

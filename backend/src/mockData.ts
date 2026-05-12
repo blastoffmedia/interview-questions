@@ -1,58 +1,19 @@
-import { Creator } from "./types";
+import { ContentItem } from "./types";
 
-/**
- * Mock creator data for the application
- * In a real app, this would come from your database
- */
-export const mockCreators: Record<string, Creator> = {
-  sarah_designs: {
-    username: "sarah_designs",
-    name: "Sarah Chen",
-    bio: "Digital artist and UI/UX designer. Creating beautiful interfaces and illustrations.",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-    followerCount: 15420,
-    category: "Design",
-    joinedDate: "2024-01-15",
-    isVerified: true,
-  },
-  tech_mike: {
-    username: "tech_mike",
-    name: "Mike Rodriguez",
-    bio: "Full-stack developer sharing coding tutorials and tech reviews.",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mike",
-    followerCount: 8930,
-    category: "Technology",
-    joinedDate: "2024-03-22",
-    isVerified: true,
-  },
-  fitness_emma: {
-    username: "fitness_emma",
-    name: "Emma Thompson",
-    bio: "Certified personal trainer. Helping you achieve your fitness goals! 💪",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
-    followerCount: 23100,
-    category: "Fitness",
-    joinedDate: "2023-11-08",
-    isVerified: true,
-  },
-  chef_marco: {
-    username: "chef_marco",
-    name: "Marco Bianchi",
-    bio: "Italian chef and food enthusiast. Sharing family recipes and cooking tips.",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marco",
-    followerCount: 12650,
-    category: "Food",
-    joinedDate: "2024-02-10",
-    isVerified: false,
-  },
-  music_alex: {
-    username: "music_alex",
-    name: "Alex Kim",
-    bio: "Music producer and sound engineer. Electronic music and production tutorials.",
-    avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
-    followerCount: 19200,
-    category: "Music",
-    joinedDate: "2023-12-03",
-    isVerified: true,
-  },
-};
+export const mockContent: ContentItem[] = [
+  { id: 1,  title: "10 Tips for Better UI Design",       creatorName: "Sarah Chen",      category: "Design",     platform: "YouTube",   views: 45000,  publishedDate: "2025-01-15" },
+  { id: 2,  title: "Figma to Production in 5 Steps",     creatorName: "Sarah Chen",      category: "Design",     platform: "Instagram", views: 12000,  publishedDate: "2025-02-08" },
+  { id: 3,  title: "Color Theory for Devs",              creatorName: "Sarah Chen",      category: "Design",     platform: "TikTok",    views: 88000,  publishedDate: "2025-02-22" },
+  { id: 4,  title: "React Server Components Explained",  creatorName: "Mike Rodriguez",  category: "Tech",       platform: "YouTube",   views: 67000,  publishedDate: "2025-01-30" },
+  { id: 5,  title: "Why I switched from Vue to React",   creatorName: "Mike Rodriguez",  category: "Tech",       platform: "X",         views: 23000,  publishedDate: "2025-03-04" },
+  { id: 6,  title: "Cursor vs Claude Code",              creatorName: "Mike Rodriguez",  category: "Tech",       platform: "YouTube",   views: 102000, publishedDate: "2025-03-19" },
+  { id: 7,  title: "5-Minute Morning Workout",           creatorName: "Emma Thompson",   category: "Fitness",    platform: "TikTok",    views: 250000, publishedDate: "2025-01-08" },
+  { id: 8,  title: "Why I Stopped Counting Calories",    creatorName: "Emma Thompson",   category: "Fitness",    platform: "Instagram", views: 91000,  publishedDate: "2025-02-14" },
+  { id: 9,  title: "Resistance Bands Full Body Routine", creatorName: "Emma Thompson",   category: "Fitness",    platform: "YouTube",   views: 56000,  publishedDate: "2025-03-11" },
+  { id: 10, title: "Perfect Carbonara, No Cream",       creatorName: "Marco Bianchi",   category: "Food",       platform: "YouTube",   views: 180000, publishedDate: "2025-01-22" },
+  { id: 11, title: "30-Sec Pizza Dough Hack",            creatorName: "Marco Bianchi",   category: "Food",       platform: "TikTok",    views: 410000, publishedDate: "2025-02-18" },
+  { id: 12, title: "What I Eat in a Day, Roma",         creatorName: "Marco Bianchi",   category: "Food",       platform: "Instagram", views: 73000,  publishedDate: "2025-03-25" },
+  { id: 13, title: "Producing a Track in Ableton 12",    creatorName: "Alex Kim",        category: "Music",      platform: "YouTube",   views: 38000,  publishedDate: "2025-01-12" },
+  { id: 14, title: "Free Sample Pack Drop",              creatorName: "Alex Kim",        category: "Music",      platform: "X",         views: 14000,  publishedDate: "2025-02-27" },
+  { id: 15, title: "Beat Made From Kitchen Sounds",      creatorName: "Alex Kim",        category: "Music",      platform: "TikTok",    views: 156000, publishedDate: "2025-03-30" },
+];
