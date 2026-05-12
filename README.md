@@ -68,7 +68,7 @@ You should see the list flash incorrect results - settling on content from a cat
 
 ## Part 2, Batch Worker Production Bug
 
-A single self-contained file in `part-2-problems/`. It models a real production batch system (cron + worker + reaper + queue) over a deterministic 24h compressed simulation. Some tasks are being processed more than once and analytics is over-counting downstream. You need to find the cause and fix it.
+A single self-contained file in `part-2-problems/`. It simulates a production batch system over a deterministic 24h compressed run. Some tasks are being processed more than once, and a handful never finish in the window. Find the cause(s) and fix.
 
 ### Setup
 
@@ -83,4 +83,4 @@ npm install
 npm run batch     # → batch-worker.ts
 ```
 
-Read the problem header at the top of `batch-worker.ts`. Run the simulator, observe the metrics, and iterate against them. The acceptance criterion is `ledger_entries == tasks_completed` with `sla_hit_24h` still true.
+Read the problem header at the top of `batch-worker.ts` for context and acceptance criteria, run the simulator, and iterate against the metrics.

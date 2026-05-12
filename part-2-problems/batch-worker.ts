@@ -2,9 +2,8 @@
  * PROBLEM, Batch Worker — Production Bug
  *
  * PRODUCTION CONTEXT
- *   We run a once-a-day batch to recompute creator view-count aggregates.
- *   Each task processes one creator's shard. The system has two moving
- *   parts, both in this file:
+ *   Once a day we batch-process a list of tasks, one per creator. The
+ *   system has two moving parts, both in this file:
  *
  *     1. CRON, fires every 3h (8 ticks/day).
  *     2. WORKER, invoked by each tick. Concurrency 1 per tick (the platform
@@ -15,11 +14,11 @@
  *
  *   The DB is an in-memory `Map` here. In production it's Postgres.
  *
- * PRODUCTION SYMPTOMS (last night's run, escalated this morning)
- *   - aggregates_ledger has more rows than tasks completed.
- *     Analytics is over-counting downstream.
+ * PRODUCTION SYMPTOMS (last night's run)
+ *   - The job ledger has more rows than tasks completed; downstream
+ *     reports are over-counting.
  *   - A handful of tasks never finished in the 24h window
- *     (job_table.status='leased' at end of day).
+ *     (status='leased' at end of day).
  *
  * YOUR TASK
  *   Find the cause(s) and ship a fix. The simulator at the bottom replays
@@ -141,8 +140,8 @@ type Queue = ReturnType<typeof makeQueue>;
 
 // ---------- the work --------------------------------------------------------
 // doWork is invoked by the worker for each claimed task. It writes one row
-// to the analytics ledger (consumed downstream by the BI dashboard) and
-// occasionally throws a transient error to model network/db flakes.
+// to the job ledger and occasionally throws a transient error to model
+// network/db flakes.
 
 const ledger: LedgerEntry[] = [];
 
