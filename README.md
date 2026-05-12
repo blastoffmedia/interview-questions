@@ -1,19 +1,25 @@
 # Blastoff, Full-Stack Interview
 
-Welcome. This repo is a small full-stack app you'll be working with during the interview. Your interviewer will walk you through everything verbally, you don't need to read more than this to get started.
+Welcome. This is a two-part interview: one without AI, one with. Setup instructions and problem descriptions are below. Your interviewer will walk you through each part when we get there.
+
+**Before the interview:** make sure your AI tool of choice (Cursor, Claude Code, etc.) is installed and ready to go. You'll need it for Part 2.
 
 ---
 
-## Architecture
+## Format
 
-Two apps that mirror Blastoff's production setup:
-
-- **Backend**, Express + TypeScript in `/backend` (port 3001)
-- **Frontend**, Next.js 15 + TypeScript + Tailwind in `/next` (port 3000)
+| Part | AI | What you'll do |
+|---|---|---|
+| **Part 1** (~30 min) | Off | Read the existing app, add a feature, debug a reported issue |
+| **Part 2** (~15 min) | On | Implement a focused standalone problem |
 
 ---
 
-## Running
+## Part 1, Creator Content List
+
+A small full-stack app (Express backend, Next.js frontend) that lists creator content with filtering and pagination. Part 1 has three phases, in order.
+
+### Setup
 
 Open **two terminals**:
 
@@ -33,6 +39,48 @@ npm run dev
 # → http://localhost:3000
 ```
 
-Once both are up, the main page is at `http://localhost:3000/content`.
+Main page: `http://localhost:3000/content`
 
-The `part-2-problems/` folder is a separate set of standalone exercises, see its own README for setup.
+### Architecture
+
+- **Backend**, Express + TypeScript in `/backend` (port 3001)
+- **Frontend**, Next.js 15 + TypeScript + Tailwind in `/next` (port 3000)
+
+### Phase 1 - Walkthrough (~5-7 min)
+
+Read through the code, then walk your interviewers through how it works: the backend, the frontend, and how data flows between them. You don't need to explain every line, just the general shape.
+
+### Phase 2 - Feature (~10-12 min)
+
+Add a platform filter alongside the existing category filter. Each content item already has a `platform` field (YouTube, Instagram, TikTok, X). A user should be able to filter by both at the same time, for example all Tech content on YouTube. Touch whatever layers you need to.
+
+### Phase 3 - Debug (~10-12 min)
+
+There is a bug in the app. To reproduce it:
+
+1. Open `http://localhost:3000/content`
+2. Click through the category pills as fast as you can: Design, Tech, Fitness, Food, Music, repeat
+3. Watch the content list
+
+You should see the list flash incorrect results - settling on content from a category you didn't end up on. Find and fix the cause. The bug is not in the category pill UI.
+
+---
+
+## Part 2, Batch Worker Production Bug
+
+A single self-contained file in `part-2-problems/`. It models a real production batch system (cron + worker + reaper + queue) over a deterministic 24h compressed simulation. Some tasks are being processed more than once and analytics is over-counting downstream. You need to find the cause and fix it.
+
+### Setup
+
+```bash
+cd part-2-problems
+npm install
+```
+
+### Run
+
+```bash
+npm run batch     # → batch-worker.ts
+```
+
+Read the problem header at the top of `batch-worker.ts`. Run the simulator, observe the metrics, and iterate against them. The acceptance criterion is `ledger_entries == tasks_completed` with `sla_hit_24h` still true.

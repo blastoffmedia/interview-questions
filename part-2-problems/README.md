@@ -1,4 +1,4 @@
-# Part 2 problems
+# Part 2 problem
 
 ## Setup
 
@@ -9,12 +9,8 @@ npm install
 
 ## Run
 
-Your interviewer will point you at one of the files in this folder. To run it:
-
 ```bash
-npm run batch          # → 1-batch-worker.ts
-npm run webhook        # → 2-webhook-handler.ts
-npm run eligibility    # → 3-eligibility-filter.ts
+npm run batch     # → batch-worker.ts
 ```
 
-Each file is self-contained. Read the problem description at the top, fill in the implementation marked `// TODO`, and run it with the corresponding command to iterate.
+The file is self-contained. Read the problem header at the top, run the simulator to see the production symptom, then iterate. Your interviewer will guide you through the format.

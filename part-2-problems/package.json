@@ -2,11 +2,9 @@
   "name": "interview-part-2",
   "version": "1.0.0",
   "private": true,
-  "description": "Part 2 (AI-on) standalone problems for the senior full-stack interview",
+  "description": "Part 2 (AI-on) standalone problem for the senior full-stack interview",
   "scripts": {
-    "batch": "ts-node 1-batch-worker.ts",
-    "webhook": "ts-node 2-webhook-handler.ts",
-    "eligibility": "ts-node 3-eligibility-filter.ts"
+    "batch": "ts-node batch-worker.ts"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
