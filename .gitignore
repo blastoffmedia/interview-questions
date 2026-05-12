@@ -7,9 +7,10 @@ dist/
 .idea/
 .vscode/
 
-# Solution files (for interviewers only - don't commit)
+# Interviewer-only files - don't commit
 SOLUTION.md
 **/SOLUTION.md
 *.SOLUTION.ts
 *.SOLUTION.tsx
+INTERVIEW_GUIDE.md
 
