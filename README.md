@@ -1,6 +1,6 @@
 # Blastoff, Full-Stack Interview
 
-Welcome. This is a two-part interview: one without AI, one with. Setup instructions and problem descriptions are below. Your interviewer will walk you through each part when we get there.
+Welcome. This interview runs about **70 minutes**: architecture whiteboard (~20 min), then coding without AI, then coding with AI. Setup instructions and problem descriptions are below. Your interviewer will walk you through each part when we get there.
 
 **Before the interview:** make sure your AI tool of choice (Cursor, Claude Code, etc.) is installed and ready to go. You'll need it for Part 2.
 
@@ -10,8 +10,19 @@ Welcome. This is a two-part interview: one without AI, one with. Setup instructi
 
 | Part | AI | What you'll do |
 |---|---|---|
-| **Part 1** (~30 min) | Off | Read the existing app, add a feature, debug a reported issue |
-| **Part 2** (~15 min) | On | Implement a focused standalone problem |
+| **Part 0** (~20 min) | N/A | Whiteboard a system design — boxes and arrows, no code |
+| **Part 1** (~27 min) | Off | Read the existing app, add a feature, debug a reported issue |
+| **Part 2** (~12 min) | On | Diagnose and fix a focused standalone problem |
+
+---
+
+## Part 0, Architecture Whiteboard
+
+A shared whiteboard exercise (Excalidraw or similar). You'll design how to refresh metrics for 80k creator profiles on a 24h cycle, with sync and async vendor calls, rate limits, and Cloud Run constraints.
+
+Full problem statement: [`part-0-whiteboard/README.md`](part-0-whiteboard/README.md)
+
+No repo setup — your interviewer shares the canvas at the start of this block.
 
 ---
 
