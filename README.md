@@ -1,8 +1,6 @@
 # Blastoff, Full-Stack Interview
 
-Welcome. This interview runs about **70 minutes**: architecture whiteboard (~20 min), then coding without AI, then coding with AI. Setup instructions and problem descriptions are below. Your interviewer will walk you through each part when we get there.
-
-**Before the interview:** make sure your AI tool of choice (Cursor, Claude Code, etc.) is installed and ready to go. You'll need it for Part 2.
+Welcome. This interview runs about **58 minutes**: architecture whiteboard (~20 min), then hands-on coding. Setup instructions and problem descriptions are below. Your interviewer will walk you through each part when we get there.
 
 ---
 
@@ -12,7 +10,6 @@ Welcome. This interview runs about **70 minutes**: architecture whiteboard (~20 
 |---|---|---|
 | **Part 0** (~20 min) | N/A | Whiteboard a system design — boxes and arrows, no code |
 | **Part 1** (~27 min) | Off | Read the existing app, add a feature, debug a reported issue |
-| **Part 2** (~12 min) | On | Diagnose and fix a focused standalone problem |
 
 ---
 
@@ -74,24 +71,3 @@ There is a bug in the app. To reproduce it:
 3. Watch the content list
 
 You should see the list flash incorrect results - settling on content from a category you didn't end up on. Find and fix the cause. The bug is not in the category pill UI.
-
----
-
-## Part 2, Batch Worker Production Bug
-
-A single self-contained file in `part-2-problems/`. It simulates a production batch system over a deterministic 24h compressed run. Some tasks are being processed more than once, and a handful never finish in the window. Find the cause(s) and fix.
-
-### Setup
-
-```bash
-cd part-2-problems
-npm install
-```
-
-### Run
-
-```bash
-npm run batch     # → batch-worker.ts
-```
-
-Read the problem header at the top of `batch-worker.ts` for context and acceptance criteria, run the simulator, and iterate against the metrics.
